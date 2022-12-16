@@ -73,6 +73,7 @@ import { useState } from 'react';
 
  const Useeffect = () => {
     const[count, setCount] =useState(2);
+    const[number, setNumber] = useState(5);
 
 // INCREMENT FUNCTION
 const incrementNumber = () => {
@@ -90,6 +91,17 @@ const divideNumber = () => {
 const defaultState = () => {
     setCount(prevCount=> 2);
 }
+
+//number functionality
+const incrementBy5 =() => {
+    setNumber(prevnumber => prevnumber +5);
+}
+const decrementBy5 =() => {
+    setNumber(prevnumber => prevnumber -5);
+}
+const defaultNum =() => {
+    setNumber(prevnumber =>5);
+}
   return (
     <div>
     <h4>Functional state using useState</h4>
@@ -99,7 +111,14 @@ const defaultState = () => {
     <button onClick ={multiNumber}>Multiply</button>
     <button onClick = {divideNumber}>Division</button>
     <button onClick ={defaultState}>Default</button>
+    <br></br>
+    <h4>Number state</h4>
+    <p>{number}</p>
+    <button onClick={incrementBy5}>Incre 5</button>
+    <button onClick={decrementBy5}>Decre 5</button>
+    <button onClick={defaultNum}>Defalut</button>
     </div>
+    
   )
 }
 
